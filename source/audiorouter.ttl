@@ -28,11 +28,6 @@
 	lv2:requiredFeature urid:map ;
 	lv2:optionalFeature lv2:hardRTCapable ;
 
-	rdfs:comment """
-This is an audio router controlled by a midi cc value (max 127) converted to binary to control the output ports to which the signal is propogated.  If the number is 1 (i.e 0000001 in binary) then the audio signal only flows through port Out1.  If it is 15 (i.e. 0001111 in binary) it flows through ports out1,out2,out4 and out8.  If it is 0 nothings flows.
-""";
-
-
 	lv2:port [
 		a lv2:AudioPort,
 		lv2:InputPort ;
