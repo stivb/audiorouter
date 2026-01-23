@@ -28,10 +28,8 @@
 	lv2:optionalFeature lv2:hardRTCapable ;
 
 	rdfs:comment """
-	This is an audio router controlled by a midi cc value (max 127) converted to binary to control
-	the output ports (Out1,Out2,Out4,Out8,Out16,Out32,Out64) to which the audio signal is propogated.  
-	If the number is 1 (i.e 0000001 in binary) then the audio signal only flows through port Out1.  
-	If it is 15 (i.e. 0001111 in binary) it flows through ports Out1,Out2,Out4 and Out8.  If it is 0 nothings flows.
+	This is an audio router controlled by a midi cc value (max 127) converted to binary to control the output ports (Out1,Out2,Out4,Out8,Out16,Out32,Out64) to which the audio signal is propogated.  
+	If the number is 1 (i.e 0000001 in binary) then the audio signal only flows through port Out1.  If it is 15 (i.e. 0001111 in binary) it flows through ports Out1,Out2,Out4 and Out8.  If it is 0 nothings flows.
 	""";
 
 	lv2:port [
