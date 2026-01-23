@@ -9,7 +9,7 @@
 
 
 
-<https://github.com/stivb/oilcanplugins/audiorouter>
+<https://github.com/stivb/audiorouter>
 	a lv2:Plugin ;
 	doap:name "OilCan Audiorouter" ;
 	lv2:minorVersion 0 ;
