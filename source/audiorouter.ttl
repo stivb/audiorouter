@@ -23,6 +23,16 @@
 	foaf:mbox <mailto:oilcansteve@hotmail.com>;
 	];
 
+	rdfs:comment """
+This is an audio router controlled by a midi cc value (max 127) converted to binary to control
+the output ports to which the signal is propogated.  Audio can be to be sent to 7 possible outputs (Out1,Out2,Out4,Out8,Out16,Out32,Out64). 
+Which ones it goes to is determined by a value 0-127 set by an external midi CC command value which is then converted to binary. 
+Therefore if you put in 1 (0000001 in binary) - then the signal just goes to the port Out1 - if its 16 it is 0010000 therefore only port Out16 passes on the signal. 
+Though if it is 15, the signal flows through Out1, Out2, Out4 and Out8 (15 being 0001111 in binary). Clicking on the radio buttons in the UI will
+cause the actual binary number to appear.  However, it is more powerful when an external device sends the midi CC value to enable
+a single value to control.
+""";
+
 	lv2:requiredFeature urid:map ;
 	lv2:optionalFeature lv2:hardRTCapable ;
 	lv2:port [
