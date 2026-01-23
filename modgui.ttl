@@ -1,0 +1,23 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://github.com/stivb/oilcanplugins/audiorouter>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-oilcan-audiorouter.html> ;
+        modgui:stylesheet <modgui/stylesheet-oilcan-audiorouter.css> ;
+        modgui:javascript <modgui/audiorouter.js> ;
+        modgui:screenshot <modgui/screenshot-oilcan-audiorouter.png> ;
+        modgui:thumbnail <modgui/thumbnail-oilcan-audiorouter.png> ;
+        modgui:brand "OilCan" ;
+        modgui:label "audiorouter" ;
+        modgui:model "boxy" ;
+        modgui:panel "1-knob" ;
+        modgui:color "blue" ;
+        modgui:knob "aluminium" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "GatesBits" ;
+            lv2:name "Gate Pattern" ;
+        ] ;
+    ] .
