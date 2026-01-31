@@ -1,41 +1,40 @@
 function handleEvent(event, funcs) {
 
 
-  const setGatesBitsValue = () => {
+  const setDecimal = () => {
     var binaryString = "";
-    for (let i=7; i>=0; i--) {        
+    for (let i=6; i>=0; i--) {        
         const isChecked = event.icon.find(`#gatebit${i}`).prop("checked");
         binaryString += isChecked ? "1" : "0";
     }
     const val = parseInt(binaryString, 2);
-    console.log("Setting GatesBits to: " + val);
+    console.log("Setting Decimal to: " + val);
     funcs.set_port_value('GatesBits', val);
-    event.icon.find(`#binVal`).text(val);
+    event.icon.find(`#decVal`).text(val);
   }
 
-
-
+  const setBinary = (value) => {
+    var boolArray = [false, false, false, false, false, false, false];
+    for (let i=0; i<boolArray.length; i++) {
+      boolArray[i] = ( (value & (1 << i)) != 0 );
+    }
+    boolArray.map((v, i) => {
+      event.icon.find(`#gatebit${i}`).prop("checked", v);
+    });
+  }
 
 
   if (event.type == 'start') {
     console.log("start event:");
-    for (let i=0; i<8; i++) {
+    if (port.symbol=='GatesBits') setBinary(port.value);
+    //attaching onclick to each checkbox
+    for (let i=0; i<7; i++) {       
         event.icon.find(`#gatebit${i}`).on("click", () => {
-            setGatesBitsValue();
+            setDecimal();
         });
     }
 
   } else if (event.type == 'change' && event.symbol=='GatesBits') {
-    //handleEvent(event.symbol, event.value);
-    var boolArray = [false, false, false, false, false, false, false, false];
-    var value = parseInt(event.value,2).toString();
-    console.log(value);
-    for (let i=0; i<8; i++) {
-      boolArray[i] = ( (event.value & (1 << i)) != 0 );
-    }
-    event.icon.find(`#binVal`).text(parseInt(event.value,10));
-    boolArray.map((v, i) => {
-      event.icon.find(`#gatebit${i}`).prop("checked", v);
-    });
+    setBinary(event.value);
   }
 }

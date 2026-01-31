@@ -3,8 +3,8 @@
 # audiorouter
 #
 ######################################
-AUDIOROUTER_VERSION = 199e61890ef21011b42824c54b10c39952a9a926
-AUDIOROUTER_SITE = https://github.com/stivb/audiorouter.git
+AUDIOROUTER_VERSION = 4478ead1bb8114f41a61603f43a6147af368f8b3
+AUDIOROUTER_SITE = https://github.com/OilCanSteve/audiorouter
 AUDIOROUTER_SITE_METHOD = git
 AUDIOROUTER_BUNDLES = audiorouter.lv2
 
