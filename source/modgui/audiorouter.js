@@ -8,8 +8,8 @@ function handleEvent(event, funcs) {
         binaryString += isChecked ? "1" : "0";
     }
     const val = parseInt(binaryString, 2);
-    console.log("Setting Decimal to: " + val);
-    funcs.set_port_value('GatesBits', val);
+    //console.log("Setting Decimal to: " + val);
+    if (!isNaN(val)) funcs.set_port_value('GatesBits', val);
     event.icon.find(`#decVal`).text(val);
   }
 
@@ -25,7 +25,7 @@ function handleEvent(event, funcs) {
 
 
   if (event.type == 'start') {
-    console.log("start event:");
+    //console.log("start event:");
     if (port.symbol=='GatesBits') setBinary(port.value);
     //attaching onclick to each checkbox
     for (let i=0; i<7; i++) {       
